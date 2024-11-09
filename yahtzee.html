@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Yahtzee</title>
+</head>
+<body>
+    <header>
+        <img src= "\pictures\1.png" alt="y" style="width: 100%"/>
+        <h1>Yahtzee game!</h1>
+        <p id="y"></p>
+    </header>
+    <main>
+        <div id="container1">
+            <div class="dice" id="dieone" onclick="lockin1(this)">?</div>
+            <div class="dice" id="dietwo" onclick="lockin2(this)">?</div>
+            <div class="dice" id="diethree" onclick="lockin3(this)">?</div>
+            <div class="dice" id="diefour" onclick="lockin4(this)">?</div>
+            <div class="dice" id="diefive" onclick="lockin5(this)">?</div>
+        </div>
+
+        <input type="button" value="Roll the dice!" id="roll" onclick="roll()"/>
+        <p id="rolls">3 roll(s) remaining.</p>
+        <p id="message"></p>
+
+        <div id="container2">
+            <table class="table">
+                <tr>
+                    <th>Category</th>
+                    <th>Description</th>
+                    <th>How to score</th>
+                    <th>Points</th>
+                    <th>Submit</th>
+                </tr>
+                <tr>
+                    <td>Aces</td>
+                    <td>Any combination</td>
+                    <td>Sum of dice with "1"</td>
+                    <td id="ones">0</td>
+                    <td><input type="submit" value="Submit" id="subones" /></td>
+                </tr>
+                <tr>
+                    <td>Twos</td>
+                    <td>Any combination</td>
+                    <td>Sum of dice with "2"</td>
+                    <td id="twos">0</td>
+                    <td><input type="submit" value="Submit" id="subtwos" /></td>
+                </tr>
+                <tr>
+                    <td>Threes</td>
+                    <td>Any combination</td>
+                    <td>Sum of dice with "3"</td>
+                    <td id="threes">0</td>
+                    <td><input type="submit" value="Submit" id="subthrees" /></td>
+                </tr>
+                <tr>
+                    <td>Fours</td>
+                    <td>Any combination</td>
+                    <td>Sum of dice with "4"</td>
+                    <td id="fours">0</td>
+                    <td><input type="submit" value="Submit" id="subfours" /></td>
+                </tr>
+                <tr>
+                    <td>Fives</td>
+                    <td>Any combination</td>
+                    <td>Sum of dice with "5"</td>
+                    <td id="fives">0</td>
+                    <td><input type="submit" value="Submit" id="subfivess" /></td>
+
+                </tr>
+                <tr>
+                    <td>Sixes</td>
+                    <td>Any combination</td>
+                    <td>Sum of dice with "6"</td>
+                    <td id="sixes">0</td>
+                    <td><input type="submit" value="Submit" id="subsixes" /></td>
+                </tr>
+                <tr>
+                    <td>Subtotal</td>
+                    <td>Upper subtotal</td>
+                    <td>Sum of six rows above</td>
+                    <td id="subtotal">0</td>
+                </tr>
+                <tr>
+                    <td>Bonus</td>
+                    <td>Awarded id subtotal is 63 or more</td>
+                    <td>Score 35</td>
+                    <td id="bonus">0</td>
+                </tr>
+                <tr>
+                    <td>Upper total</td>
+                    <td id="uppertotal">0</td>
+                </tr>
+            </table>
+            <table class="table">
+                <tr>
+                    <th>Category</th>
+                    <th>Description</th>
+                    <th>How to score</th>
+                    <th>Points</th>
+                    <th>Submit</th>
+                </tr>
+                <tr>
+                    <td>Three of a kind</td>
+                    <td>Minimum of three dice the same</td>
+                    <td>Sum of all dice</td>
+                    <td id="three">0</td>
+                    <td><input type="submit" value="Submit" id="subthree" /></td>
+                </tr>
+                <tr>
+                    <td>Four of a kind</td>
+                    <td>Minimum of four dice the same</td>
+                    <td>Sum of all dice</td>
+                    <td id="four">0</td>
+                    <td><input type="submit" value="Submit" id="subfour" /></td>
+                </tr>
+                <tr>
+                    <td>Full house</td>
+                    <td>Three of on number and two of another</td>
+                    <td>Score 25</td>
+                    <td id="House">0</td>
+                    <td><input type="submit" value="Submit" id="subhouse" /></td>
+                </tr>
+                <tr>
+                    <td>Small straight</td>
+                    <td>Four dice in sequence</td>
+                    <td>Score 30</td>
+                    <td id="Small">0</td>
+                    <td><input type="submit" value="Submit" id="subsmall" /></td>
+                </tr>
+                <tr>
+                    <td>Large straight</td>
+                    <td>Five dice in sequence</td>
+                    <td>Score 40</td>
+                    <td id="large">0</td>
+                    <td><input type="submit" value="Submit" id="sublarge" /></td>
+
+                </tr>
+                <tr>
+                    <td>Yahtzee</td>
+                    <td>All dice the same</td>
+                    <td>Score 50</td>
+                    <td id="yahtzee">0</td>
+                    <td><input type="submit" value="Submit" id="subyahtzee" /></td>
+                </tr>
+                <tr>
+                    <td>Chance</td>
+                    <td>Any combination</td>
+                    <td>Sum of all dice</td>
+                    <td id="chance">0</td>
+                    <td><input type="submit" value="Submit" id="subchance" /></td>
+                </tr>
+                <tr>
+                    <td>Yahtzee bonus</td>
+                    <td>Additional Yahtzees</td>
+                    <td>Score 100 each</td>
+                    <td id="bonusyahtzee">0</td>
+                </tr>
+                <tr>
+                    <td>Lower total</td>
+                    <td id="lowertotal">0</td>
+                </tr>
+            </table>
+        </div>
+
+    </main>
+
+    <script src="C:\Users\luke_\OneDrive\Documents\uni part 2 stuff\20222412_cse2wdx_assignment2\Yahtzee\yahtzee.js"></script>
+    <link href="C:\Users\luke_\OneDrive\Documents\uni part 2 stuff\20222412_cse2wdx_assignment2\Yahtzee\yahtzee.css" rel="stylesheet" />
+</body>
+</html>
